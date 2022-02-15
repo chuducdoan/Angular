@@ -1,0 +1,2 @@
+1. Setup Angualar material
+- ng add @angular/material
