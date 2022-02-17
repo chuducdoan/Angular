@@ -1,0 +1,5 @@
+<mat-list role="list" class="menu-sidebar">
+    <mat-list-item role="listitem" *ngFor="let item of arrSideBar">
+        <a [routerLink]="item.url" mat-stroked-button color="primary" (click)="onButtonClick(item)">{{item.text}}</a>
+    </mat-list-item>
+</mat-list>

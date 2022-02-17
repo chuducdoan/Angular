@@ -1,0 +1,54 @@
+<form class="search-add">
+    <div class="form-wrap-input">
+        <input type="text" class="form-input" placeholder="Search">
+        <button mat-icon-button matSuffix>
+                <mat-icon>search</mat-icon>
+        </button>
+    </div>
+    <div class="button-wrap">
+        <button mat-flat-button color="action">Nạp</button>
+        <button mat-flat-button color="primary">Rút</button>
+    </div>
+</form>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> STT </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="ghichu">
+        <th mat-header-cell *matHeaderCellDef> Ghi chú </th>
+        <td mat-cell *matCellDef="let element"> {{element.ghichu}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="sotien">
+        <th mat-header-cell *matHeaderCellDef> Số tiền </th>
+        <td mat-cell *matCellDef="let element"> {{element.sotien}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="ngaynaprut">
+        <th mat-header-cell *matHeaderCellDef> Ngày nạp/rút </th>
+        <td mat-cell *matCellDef="let element"> {{element.ngaynaprut}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="loai">
+        <th mat-header-cell *matHeaderCellDef> Loại </th>
+        <td mat-cell *matCellDef="let element"> {{element.loai}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<div class="pagination">
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+    </mat-paginator>
+</div>

@@ -6,5 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular-Material';
+  breadcrumn: any;
+
+  arrSideBar: any = [
+    {
+      url: 'account',
+      text: 'Account'
+    },
+    {
+      url: 'spending-record',
+      text: 'Bản ghi chi tiêu'
+    },
+    {
+      url: 'wallet',
+      text: 'Ví'
+    }
+  ];
+
+  onButtonClickFromSideBar(event: any): void {
+    this.breadcrumn = event;
+    console.log("parent: " + this.breadcrumn.text)
+  }
 }

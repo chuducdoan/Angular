@@ -1,0 +1,6 @@
+<div class="wrap-breadcrumb">
+    <ul class="breadcrumb">
+        <li>Home</li>
+        <li *ngIf="breadcrumn"><a [routerLink]="breadcrumn.url">{{breadcrumn.text}}</a></li>
+    </ul>
+</div>
