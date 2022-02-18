@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddModalComponent implements OnInit {
 
+  hide = true;
+
   constructor() { }
 
   ngOnInit(): void {
