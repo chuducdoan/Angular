@@ -1,0 +1,59 @@
+{
+  "account": [
+    {
+      "username": "chuducdoan",
+      "password": "123456",
+      "quyen": "me",
+      "id": 1
+    },
+    {
+      "username": "phamdat",
+      "password": "123456",
+      "quyen": "bo",
+      "id": 2
+    }
+  ],
+  "spending": [
+    {
+      "id": 1,
+      "ngaytao": "19/2/2022",
+      "loaichitieu": "do xang",
+      "ghichu": "nay xe may het xang nen phai di do"
+    },
+    {
+      "id": 2,
+      "ngaytao": "20/2/2022",
+      "loaichitieu": "mua khau trang",
+      "ghichu": "phong chong dich covid19"
+    },
+    {
+      "id": 3,
+      "ngaytao": "18/2/2022",
+      "loaichitieu": "di cho",
+      "ghichu": "di cho mua do an cho ca nha"
+    }
+  ],
+  "wallet": [
+    {
+      "id": 1,
+      "ghichu": "con da rut tien",
+      "sotien": "49000",
+      "ngay": "19/2/2022",
+      "loai": "con"
+    },
+    {
+      "id": 2,
+      "ghichu": "me da nap tien",
+      "sotien": "50000",
+      "ngay": "19/2/2022",
+      "loai": "cha"
+    },
+    {
+      "id": 3,
+      "ghichu": "cha da nap tien",
+      "sotien": "200000",
+      "ngay": "19/2/2022",
+      "loai": "me"
+    }
+  ]
+}

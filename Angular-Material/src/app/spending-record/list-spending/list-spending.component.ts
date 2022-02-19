@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { PopupDeleteComponent } from 'src/app/popup/popup-delete/popup-delete.component';
+import { AddModalComponent } from '../add-modal/add-modal.component';
 
 export interface SpendingRecord {
   id: number;
@@ -23,9 +26,26 @@ export class ListSpendingComponent implements OnInit {
   displayedColumns: string[] = ['id', 'ngaytao', 'loaichitieu', 'sotien', 'ghichu', 'action'];
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  openModal() {
+    const dialogRef = this.dialog.open(AddModalComponent, {
+      width: '30%'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Dialog result: ' + result);
+    })
+  }
+
+  onSubmit() {
+    return false;
+  }
+
+  openModalDelete() {
+    const dialogRef = this.dialog.open(PopupDeleteComponent);
   }
 
 }

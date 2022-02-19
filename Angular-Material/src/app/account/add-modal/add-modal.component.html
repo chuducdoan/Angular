@@ -1,35 +1,34 @@
-<form action="">
+<form (submit)="onSubmit()" class="example-container" [formGroup]="accountForm">
   <h2 mat-dialog-title>Form Add Account</h2>
   <mat-dialog-content class="mat-typography">
-    <p>
-      <mat-form-field appearance="outline">
+    <div>
+      <mat-form-field appearance="outline" class="item-form">
         <mat-label>Username</mat-label>
-        <input matInput placeholder="Placeholder">
+        <input matInput placeholder="Placeholder" formControlName="username">
         <mat-icon matSuffix>account_circle</mat-icon>
       </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="item-form">
         <mat-label>Password</mat-label>
-        <input matInput placeholder="Placeholder" [type]="hide ? 'password' : 'text'">
+        <input matInput placeholder="Placeholder" [type]="hide ? 'password' : 'text'" formControlName="password">
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
       </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="item-form">
         <mat-label>Quyền</mat-label>
-        <input matInput placeholder="Placeholder">
-        <mat-icon matSuffix>lock</mat-icon>
+        <mat-select formControlName="quyen">
+          <mat-option value="me">Mẹ</mat-option>
+          <mat-option value="bo">Bố</mat-option>
+          <mat-option value="con">Con</mat-option>
+        </mat-select>
       </mat-form-field>
-    </p>
+    </div>
     <div class="example-container">
 
     </div>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
-      <button mat-button mat-dialog-close>Cancel</button>
-      <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+      <button mat-button mat-dialog-close>Hủy</button>
+      <button mat-raised-button color="primary" cdkFocusInitial (click)="addAccount()">{{actionBtn}}</button>
   </mat-dialog-actions>
 </form>

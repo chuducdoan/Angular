@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ListSpendingComponent } from './list-spending/list-spending.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatModuleModule } from '../mat-module/mat-module.module';
+import { AddModalComponent } from './add-modal/add-modal.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    ListSpendingComponent
+    ListSpendingComponent,
+    AddModalComponent
   ],
   imports: [
     CommonModule,

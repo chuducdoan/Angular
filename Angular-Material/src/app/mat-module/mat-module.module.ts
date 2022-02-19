@@ -13,6 +13,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatBadgeModule} from '@angular/material/badge';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSortModule } from '@angular/material/sort';
 
 const materials = [
   MatToolbarModule,
@@ -25,7 +31,14 @@ const materials = [
   MatFormFieldModule,
   MatInputModule,
   MatPaginatorModule,
-  MatDialogModule
+  MatDialogModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatBadgeModule,
+  MatSortModule,
+  ReactiveFormsModule,
+  FormsModule
 ]
 
 @NgModule({

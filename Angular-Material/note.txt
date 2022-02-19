@@ -1,2 +1,16 @@
 1. Setup Angualar material
 - ng add @angular/material
+2. Cài đặt json-server
+- npm install -g json-server
+- Chạy json-server --watch db.json
+3. Fix bug MatTableDataSource
+getAllAccount() {
+    this.accountService.getAll().subscribe((res) => {
+      this.dataSource = new MatTableDataSource(<any> res);
+        // this.length = this.dataSource.length;
+    });
+  }
+4. Dialog
+-  <button mat-flat-button [mat-dialog-close]="'delete'" cdkFocusInitial color="primary">Yes</button>
+- truyen data sang cho dialog: data: data
+- de hung data truyen sang cho dialog ta import:

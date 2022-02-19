@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { PopupDeleteComponent } from 'src/app/popup/popup-delete/popup-delete.component';
+import { AccountService } from 'src/app/service/account/account.service';
 import {AddModalComponent} from '../add-modal/add-modal.component';
+import {MatSort, Sort} from '@angular/material/sort';
 
-export interface PeriodicElement {
+export interface Account {
   username: string;
   position: number;
   weight: number;
   symbol: string;
 }
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, username: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, username: 'Helium', weight: 4.0026, symbol: 'He'},
-];
 
 @Component({
   selector: 'app-list-account',
@@ -22,22 +22,66 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 export class ListAccountComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'username', 'weight', 'symbol', 'action'];
-  dataSource = ELEMENT_DATA
+  displayedColumns: string[] = ['id', 'username', 'password', 'quyen', 'action'];
+  dataSource!: MatTableDataSource<any>;
+  length!: number;
 
-  constructor(public dialog: MatDialog) { }
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
+  constructor(public dialog: MatDialog, private accountService: AccountService) { }
 
   ngOnInit(): void {
+    this.getAllAccount();
   }
 
+  // Ham xu ly su kien click ra modal add
   openDialog() {
-    const dialogRef = this.dialog.open(AddModalComponent);
+    const dialogRef = this.dialog.open(AddModalComponent, {
+      width: '30%'
+    });
     dialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog result: ' + result);
+      if(result === "save") {
+        this.getAllAccount();
+      }
     })
   }
 
+  // Ham xu ly su kien submit form
   onSubmit() {
     return false;
+  }
+
+  // Ham xu ly cho su kien click ra modal xac nhan delete
+  openModalDelete(id: number) {
+    const dialogRef = this.dialog.open(PopupDeleteComponent);
+    dialogRef.afterClosed().subscribe(res => {
+      if(res === 'delete') {
+        this.accountService.deleteAccount(id).subscribe(resp => {
+          this.getAllAccount();
+        })
+      }
+    })
+  }
+
+  openModalEdit(data: any) {
+    const dialogRef = this.dialog.open(AddModalComponent, {
+      width: '30%',
+      data: data
+    });
+    dialogRef.afterClosed().subscribe(res => {
+      if(res === 'Save') {
+        this.getAllAccount();
+      }
+    })
+  }
+
+  // Ham xu ly lay danh sach tat ca account
+  getAllAccount() {
+    this.accountService.getAll().subscribe((res) => {
+      this.dataSource = new MatTableDataSource(<any> res);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
   }
 }
