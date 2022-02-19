@@ -1,6 +1,6 @@
 <form class="search-add" (submit)="onSubmit()">
     <div class="form-wrap-input">
-        <input type="text" class="form-input" placeholder="Search">
+        <input type="text" class="form-input" placeholder="Search" (keyup)="applyFilter($event)">
         <button mat-icon-button matSuffix>
                 <mat-icon>search</mat-icon>
         </button>
@@ -54,7 +54,7 @@
   <mat-paginator
                   showFirstLastButtons
                   [length]="length"
-              [pageSize]="5"
+              [pageSize]="10"
                   aria-label="Select page of periodic elements">
     </mat-paginator>
 </div>

@@ -11,6 +11,24 @@
       "password": "123456",
       "quyen": "bo",
       "id": 2
+    },
+    {
+      "username": "doandat",
+      "password": "123456",
+      "quyen": "con",
+      "id": 3
+    },
+    {
+      "username": "1",
+      "password": "1",
+      "quyen": "bo",
+      "id": 4
+    },
+    {
+      "username": "2",
+      "password": "2",
+      "quyen": "bo",
+      "id": 5
     }
   ],
   "spending": [
