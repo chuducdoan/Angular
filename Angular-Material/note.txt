@@ -14,3 +14,5 @@ getAllAccount() {
 -  <button mat-flat-button [mat-dialog-close]="'delete'" cdkFocusInitial color="primary">Yes</button>
 - truyen data sang cho dialog: data: data
 - de hung data truyen sang cho dialog ta import:
+5. Cau lenh thay doi css thanh scss du an
+- ng config schematics.@schematics/angular:component.style scss

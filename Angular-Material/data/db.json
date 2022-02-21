@@ -19,36 +19,33 @@
       "id": 3
     },
     {
-      "username": "1",
-      "password": "1",
-      "quyen": "bo",
-      "id": 4
-    },
-    {
-      "username": "2",
-      "password": "2",
-      "quyen": "bo",
-      "id": 5
+      "username": "quanlol",
+      "password": "123456ádc",
+      "quyen": "con",
+      "id": 7
     }
   ],
   "spending": [
     {
-      "id": 1,
-      "ngaytao": "19/2/2022",
-      "loaichitieu": "do xang",
-      "ghichu": "nay xe may het xang nen phai di do"
+      "ngaytao": "2022-02-20T17:00:00.000Z",
+      "loaichitieu": "đổ xăng",
+      "sotien": 42000,
+      "ghichu": "nay xe may het xang nen phai di do",
+      "id": 1
     },
     {
-      "id": 2,
-      "ngaytao": "20/2/2022",
-      "loaichitieu": "mua khau trang",
-      "ghichu": "phong chong dich covid19"
+      "ngaytao": "2022-02-20T17:00:00.000Z",
+      "loaichitieu": "mua khẩu trang",
+      "sotien": 52000,
+      "ghichu": "phòng chống dịch covid19",
+      "id": 2
     },
     {
-      "id": 3,
-      "ngaytao": "18/2/2022",
-      "loaichitieu": "di cho",
-      "ghichu": "di cho mua do an cho ca nha"
+      "ngaytao": "2022-02-09T17:00:00.000Z",
+      "loaichitieu": "đi chợ",
+      "sotien": 62000,
+      "ghichu": "đi chợ mua đồ ăn cho cả nhà",
+      "id": 3
     }
   ],
   "wallet": [

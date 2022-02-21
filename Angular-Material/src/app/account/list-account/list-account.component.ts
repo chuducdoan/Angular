@@ -24,7 +24,6 @@ export class ListAccountComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'username', 'password', 'quyen', 'action'];
   dataSource!: MatTableDataSource<any>;
-  length!: number;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
