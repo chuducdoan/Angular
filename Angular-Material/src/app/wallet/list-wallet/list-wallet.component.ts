@@ -1,16 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-
-export interface Wallet {
-  id: number;
-  ghichu: string;
-  sotien: number;
-  ngaynaprut: string;
-  loai: string
-}
-
-const ELEMENT_DATA: Wallet[] = [
-  {id: 1, ghichu: 'con da rut tien', sotien: 1.0079, ngaynaprut: '12/2/2022', loai: 'cha'},
-];
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { WalletService } from 'src/app/service/wallet/wallet.service';
 
 @Component({
   selector: 'app-list-wallet',
@@ -20,11 +12,29 @@ const ELEMENT_DATA: Wallet[] = [
 export class ListWalletComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'ghichu', 'sotien', 'ngaynaprut', 'loai'];
-  dataSource = ELEMENT_DATA
+  dataSource!: MatTableDataSource<any>;
 
-  constructor() { }
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
+  constructor(private walletService: WalletService) { }
 
   ngOnInit(): void {
+    this.getAllWallet();
+  }
+
+  getAllWallet() {
+    this.walletService.getAll().subscribe(res => {
+      this.dataSource = new MatTableDataSource(<any> res);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    })
+  }
+
+  applyFilter(event: Event) {
+    console.log(event);
+    const valueFilter = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = valueFilter.trim().toLowerCase();
   }
 
 }

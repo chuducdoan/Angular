@@ -53,21 +53,21 @@
       "id": 1,
       "ghichu": "con da rut tien",
       "sotien": "49000",
-      "ngay": "19/2/2022",
+      "ngaynaprut": "2022-02-09T17:00:00.000Z",
       "loai": "con"
     },
     {
       "id": 2,
       "ghichu": "me da nap tien",
       "sotien": "50000",
-      "ngay": "19/2/2022",
+      "ngaynaprut": "2022-02-09T17:00:00.000Z",
       "loai": "cha"
     },
     {
       "id": 3,
       "ghichu": "cha da nap tien",
       "sotien": "200000",
-      "ngay": "19/2/2022",
+      "ngaynaprut": "2022-02-09T17:00:00.000Z",
       "loai": "me"
     }
   ]

@@ -18,9 +18,13 @@ export class AppComponent {
       text: 'Bản ghi chi tiêu'
     },
     {
+      url: 'post',
+      text: 'Bài viết'
+    },
+    {
       url: 'wallet',
       text: 'Ví'
-    }
+    },
   ];
 
   onButtonClickFromSideBar(event: any): void {

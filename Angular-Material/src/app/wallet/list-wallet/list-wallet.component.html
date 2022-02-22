@@ -1,6 +1,6 @@
 <form class="search-add">
     <div class="form-wrap-input">
-        <input type="text" class="form-input" placeholder="Search">
+        <input type="text" class="form-input" placeholder="Search" (keyup)="applyFilter($event)">
         <button mat-icon-button matSuffix>
                 <mat-icon>search</mat-icon>
         </button>
@@ -11,48 +11,47 @@
     </div>
 </form>
 <div class="mat-elevation-z8">
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
 
     <!-- Position Column -->
     <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> STT </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
         <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="ghichu">
-        <th mat-header-cell *matHeaderCellDef> Ghi chú </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ghi chú </th>
         <td mat-cell *matCellDef="let element"> {{element.ghichu}} </td>
     </ng-container>
 
     <!-- Weight Column -->
     <ng-container matColumnDef="sotien">
-        <th mat-header-cell *matHeaderCellDef> Số tiền </th>
-        <td mat-cell *matCellDef="let element"> {{element.sotien}} </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Số tiền </th>
+        <td mat-cell *matCellDef="let element"> {{element.sotien | currency: 'VND'}} </td>
     </ng-container>
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="ngaynaprut">
-        <th mat-header-cell *matHeaderCellDef> Ngày nạp/rút </th>
-        <td mat-cell *matCellDef="let element"> {{element.ngaynaprut}} </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ngày nạp/rút </th>
+        <td mat-cell *matCellDef="let element"> {{element.ngaynaprut | date}} </td>
     </ng-container>
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="loai">
-        <th mat-header-cell *matHeaderCellDef> Loại </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Loại </th>
         <td mat-cell *matCellDef="let element"> {{element.loai}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<mat-paginator [pageSizeOptions]="[5, 10, 20]"
+<mat-paginator
                   showFirstLastButtons
-                  [length]="100"
-              [pageSize]="10"
+              [pageSize]="2"
                   aria-label="Select page of periodic elements">
     </mat-paginator>
 </div>
