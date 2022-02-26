@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
-    path: 'account',
-    loadChildren: () => import('./account/account.module').then(m => m.AccountModule)
+    path: 'login',
+    component: LoginComponent
   },
   {
-    path: 'spending-record',
-    loadChildren: () => import('./spending-record/spending-record.module').then(m => m.SpendingRecordModule)
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
   },
   {
-    path: 'wallet',
-    loadChildren: () => import('./wallet/wallet.module').then(m => m.WalletModule)
+    path: 'admin',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   }
 ];
 

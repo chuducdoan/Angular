@@ -16,3 +16,10 @@ getAllAccount() {
 - de hung data truyen sang cho dialog ta import:
 5. Cau lenh thay doi css thanh scss du an
 - ng config schematics.@schematics/angular:component.style scss
+
+6. Authentication with Firebase Rest API
+- b1: tao database tren Firebase
+- b2: import data
+- b3: copy link vd: https://valued-network-236802-default-rtdb.firebaseio.com/
+- b4: Tạo file config.ts
+- b5: Sửa rule thành true trên Firebase

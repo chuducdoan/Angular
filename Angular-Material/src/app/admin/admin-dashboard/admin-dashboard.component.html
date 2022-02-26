@@ -1,0 +1,15 @@
+<div id="wrapper">
+    <app-header></app-header>
+    <mat-sidenav-container class="example-container">
+        <mat-sidenav mode="side" opened>
+            <app-sidebar [arrSideBar]="arrSideBar" (buttonClicked)="onButtonClickFromSideBar($event)"></app-sidebar>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="main-content">
+                <app-breadcrumb [breadcrumn]="breadcrumn"></app-breadcrumb>
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+    <app-footer></app-footer>
+</div>

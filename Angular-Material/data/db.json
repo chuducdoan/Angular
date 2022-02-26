@@ -17,12 +17,6 @@
       "password": "123456",
       "quyen": "con",
       "id": 3
-    },
-    {
-      "username": "quanlol",
-      "password": "123456ádc",
-      "quyen": "con",
-      "id": 7
     }
   ],
   "spending": [
@@ -69,6 +63,43 @@
       "sotien": "200000",
       "ngaynaprut": "2022-02-09T17:00:00.000Z",
       "loai": "me"
+    }
+  ],
+  "post": [
+    {
+      "id": 1,
+      "noidung": "Ngay hom nay con duoc diem 10",
+      "luotlike": 5,
+      "nguoilike": "HuongTN",
+      "ngaydang": "2022-02-09T17:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "noidung": "Ngay hom nay me di du lich Da Nang",
+      "luotlike": 10,
+      "nguoilike": "DoanCD",
+      "ngaydang": "2022-02-09T17:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "noidung": "Ngay hom nay bo di cong tac",
+      "luotlike": 2,
+      "nguoilike": "DatNT",
+      "ngaydang": "2022-02-09T17:00:00.000Z"
+    },
+    {
+      "noidung": "Ha noi mua",
+      "luotlike": 10,
+      "nguoilike": "Tuan",
+      "ngaydang": "2022-02-24T17:00:00.000Z",
+      "id": 6
+    },
+    {
+      "noidung": "hom nay t buon",
+      "luotlike": 10,
+      "nguoilike": "Hoang Hai Lam",
+      "ngaydang": "2022-02-25T17:00:00.000Z",
+      "id": 7
     }
   ]
 }

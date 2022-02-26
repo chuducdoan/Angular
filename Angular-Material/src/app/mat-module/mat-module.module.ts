@@ -19,6 +19,10 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatBadgeModule} from '@angular/material/badge';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 const materials = [
   MatToolbarModule,
@@ -38,7 +42,10 @@ const materials = [
   MatBadgeModule,
   MatSortModule,
   ReactiveFormsModule,
-  FormsModule
+  FormsModule,
+  MatCheckboxModule,
+  MatSnackBarModule,
+  MatMenuModule
 ]
 
 @NgModule({
