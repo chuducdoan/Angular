@@ -17,6 +17,7 @@ import { AddModalSpendingComponent } from './spending-record/add-modal-spending/
 import { AddModalPostComponent } from './post/add-modal-post/add-modal-post.component';
 import { SnackBarComponent } from './snack-bar/snack-bar.component';
 import { HomeComponent } from './home/home.component';
+import { ArticleComponent } from './article/article.component';
 
 const routes: Routes = [
   {
@@ -68,7 +69,8 @@ const routes: Routes = [
     AddModalSpendingComponent,
     AddModalPostComponent,
     SnackBarComponent,
-    HomeComponent
+    HomeComponent,
+    ArticleComponent
   ],
   imports: [
     CommonModule,

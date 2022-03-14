@@ -1,20 +1,22 @@
-
 .header {
-  background: #283046;
-  color: #d0d2d6;
+    background: #283046;
+    color: #d0d2d6;
 }
 
 .header__title {
-  color: #7367f0;
+    color: #7367f0;
 }
 
 header .icon {
-  margin-left: 16px;
-  color: #fff;
+    margin-left: 16px;
+    color: #fff;
 }
 
 header a {
-  color: #fff;
-  text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
 
+.run-text {
+    height: 20px;
+}

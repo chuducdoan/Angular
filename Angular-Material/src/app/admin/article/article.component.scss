@@ -1,0 +1,31 @@
+.article-date {
+    position: relative;
+    h2 {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        font-size: 16px;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        width: 31%;
+        height: 1px;
+        background-color: #000;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        width: 31%;
+        height: 1px;
+        background-color: #000;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+}

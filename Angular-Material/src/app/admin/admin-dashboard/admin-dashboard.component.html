@@ -4,12 +4,15 @@
         <mat-sidenav mode="side" [opened]="toggle" class="sidebar">
             <app-sidebar [arrSideBar]="arrSideBar" (buttonClicked)="onButtonClickFromSideBar($event)"></app-sidebar>
         </mat-sidenav>
-        <mat-sidenav-content>
+        <mat-sidenav-content class="wrap-content">
             <div class="main-content">
                 <app-breadcrumb [breadcrumn]="breadcrumn"></app-breadcrumb>
                 <router-outlet></router-outlet>
             </div>
-            <app-footer></app-footer>
+            <div class="blog">
+                <app-article></app-article>
+            </div>
         </mat-sidenav-content>
     </mat-sidenav-container>
+    <app-footer></app-footer>
 </div>

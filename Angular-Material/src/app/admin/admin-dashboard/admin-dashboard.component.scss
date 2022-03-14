@@ -1,11 +1,31 @@
 .example-container {
-  min-height: calc(100vh - 64px);
-  max-height: calc(100vh - 64px);
-  background: #eee;
+    min-height: calc(100vh - 148px);
+    max-height: calc(100vh - 148px);
+    background: #eee;
 }
 
-.sidebar {
-  position: fixed;
-  top: 64px;
-  left: 0;
+// .sidebar {
+//     position: fixed;
+//     top: 64px;
+//     left: 0;
+// }
+.wrap-content {
+    display: flex;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+.blog {
+    width: 240px;
+    flex-shrink: 0;
+    background-color: #fff;
+    padding: 10px;
+    border-left: 1px solid #d3d3d3;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
 }

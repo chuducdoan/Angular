@@ -1,26 +1,29 @@
 <header>
     <div>
-      <mat-toolbar color="primary">
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="toggleSideBar()">
+        <mat-toolbar color="primary">
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="toggleSideBar()">
           <mat-icon>menu</mat-icon>
         </button>
-        <a [routerLink]="['home']">My App</a>
-        <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon icon" aria-label="Example icon-button with share icon">
+            <a [routerLink]="['home']">My App</a>
+            <span class="example-spacer"></span>
+            <button mat-icon-button class="example-icon icon" aria-label="Example icon-button with share icon">
           <mat-icon>settings</mat-icon>
         </button>
-        <button mat-icon-button class="example-icon icon" aria-label="Example icon-button with share icon">
+            <button mat-icon-button class="example-icon icon" aria-label="Example icon-button with share icon">
           <mat-icon>help</mat-icon>
         </button>
-        <button mat-icon-button class="example-icon icon" aria-label="Example icon-button with share icon" [matMenuTriggerFor]="menu">
+            <button mat-icon-button class="example-icon icon" aria-label="Example icon-button with share icon" [matMenuTriggerFor]="menu">
           <mat-icon>person_outline</mat-icon>
         </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="logout()">
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="logout()">
             <mat-icon>exit_to_app</mat-icon>
             <span>Logout</span>
           </button>
-        </mat-menu>
-      </mat-toolbar>
+            </mat-menu>
+        </mat-toolbar>
+    </div>
+    <div class="run-text">
+        <marquee>Hoc HTML tai VietJack - Vi du cach su dung the marquee.</marquee>
     </div>
 </header>
