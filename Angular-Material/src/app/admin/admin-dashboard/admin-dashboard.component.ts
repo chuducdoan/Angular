@@ -9,6 +9,7 @@ export class AdminDashboardComponent implements OnInit {
 
   breadcrumn: any;
   login: boolean = true;
+  toggle = true;
 
   arrSideBar: any = [
     {
@@ -37,6 +38,10 @@ export class AdminDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleSideBar(event: Event) {
+    this.toggle = !this.toggle;
   }
 
 }

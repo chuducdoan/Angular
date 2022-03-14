@@ -8,6 +8,7 @@ import { DialogDeleteComponent } from '../../popup/dialog-delete/dialog-delete.c
 import { AddModalAccountComponent } from '../add-modal-account/add-modal-account.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackBarComponent } from '../../snack-bar/snack-bar.component';
+import {getNotifytical} from '../../../util/util';
 
 export interface Account {
   username: string;
@@ -45,7 +46,7 @@ export class ListAccountComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result === "save") {
         this.getAllAccount();
-        this.getNotifytical('add');
+        getNotifytical('save', this._snackBar, SnackBarComponent);
       }
     })
   }
@@ -62,7 +63,7 @@ export class ListAccountComponent implements OnInit {
       if(res === 'delete') {
         this.accountService.deleteAccount(id).subscribe(resp => {
           this.getAllAccount();
-          this.getNotifytical('delete');
+          getNotifytical('delete', this._snackBar, SnackBarComponent);
         })
       }
     })
@@ -76,7 +77,7 @@ export class ListAccountComponent implements OnInit {
     dialogRef.afterClosed().subscribe(res => {
       if(res === 'Save') {
         this.getAllAccount();
-        this.getNotifytical('edit');
+        getNotifytical('edit', this._snackBar, SnackBarComponent);
       }
     })
   }
@@ -99,14 +100,14 @@ export class ListAccountComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  /**
-   * Ham thuc hien chuc nang hien thi thong bao khi them hoac sua hoac xoa thanh cong
-   * @param message tham so truyen vao la message de nhan biet do la thong bao cua chuc nang them hay sua hay xoa
-   */
-  getNotifytical(message: string) {
-    this._snackBar.openFromComponent(SnackBarComponent, {
-      duration: this.durationInSeconds*1000,
-      data: message
-    })
-  }
+  // /**
+  //  * Ham thuc hien chuc nang hien thi thong bao khi them hoac sua hoac xoa thanh cong
+  //  * @param message tham so truyen vao la message de nhan biet do la thong bao cua chuc nang them hay sua hay xoa
+  //  */
+  // getNotifytical(message: string) {
+  //   this._snackBar.openFromComponent(SnackBarComponent, {
+  //     duration: this.durationInSeconds*1000,
+  //     data: message
+  //   })
+  // }
 }

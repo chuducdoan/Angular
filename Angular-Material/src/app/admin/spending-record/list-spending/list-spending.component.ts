@@ -6,6 +6,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { SpendingService } from 'src/app/service/spending/spending.service';
 import { DialogDeleteComponent } from '../../popup/dialog-delete/dialog-delete.component';
 import { AddModalSpendingComponent } from '../add-modal-spending/add-modal-spending.component';
+import {getNotifytical} from '../../../util/util';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackBarComponent } from '../../snack-bar/snack-bar.component';
 
 @Component({
   selector: 'app-list-spending',
@@ -20,7 +23,7 @@ export class ListSpendingComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(public dialog: MatDialog, private spendingService: SpendingService) { }
+  constructor(public dialog: MatDialog, private spendingService: SpendingService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getAllSpending();
@@ -35,6 +38,7 @@ export class ListSpendingComponent implements OnInit {
       console.log('Dialog result: ' + result);
       if(result === 'save') {
         this.getAllSpending();
+        getNotifytical('save', this._snackBar, SnackBarComponent);
       }
     })
   }
@@ -50,6 +54,7 @@ export class ListSpendingComponent implements OnInit {
         this.spendingService.deleteSpending(id).subscribe({
           next: () => {
             this.getAllSpending();
+            getNotifytical('delete', this._snackBar, SnackBarComponent);
           },
           error: () => {
             alert("Xoa that bai!");
@@ -68,6 +73,7 @@ export class ListSpendingComponent implements OnInit {
     dialogRef.afterClosed().subscribe(res => {
       if(res === 'update') {
         this.getAllSpending();
+        getNotifytical('edit', this._snackBar, SnackBarComponent);
       }
     })
   }

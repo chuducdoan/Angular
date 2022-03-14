@@ -16,12 +16,17 @@ import { AddModalAccountComponent } from './account/add-modal-account/add-modal-
 import { AddModalSpendingComponent } from './spending-record/add-modal-spending/add-modal-spending.component';
 import { AddModalPostComponent } from './post/add-modal-post/add-modal-post.component';
 import { SnackBarComponent } from './snack-bar/snack-bar.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
     component: AdminDashboardComponent,
     children: [
+      {
+        path: 'home',
+        component: HomeComponent
+      },
       {
         path: 'account',
         component: ListAccountComponent
@@ -37,6 +42,10 @@ const routes: Routes = [
       {
         path: 'wallet',
         component: ListWalletComponent
+      },
+      {
+        path: '',
+        redirectTo: 'home'
       }
     ]
   },
@@ -58,7 +67,8 @@ const routes: Routes = [
     ListPostComponent,
     AddModalSpendingComponent,
     AddModalPostComponent,
-    SnackBarComponent
+    SnackBarComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

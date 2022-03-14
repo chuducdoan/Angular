@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { of, throwError } from 'rxjs';
@@ -7,7 +8,7 @@ import { of, throwError } from 'rxjs';
 })
 export class AuthService {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   setToken(token: string) {
     localStorage.setItem('token', token);
@@ -27,11 +28,20 @@ export class AuthService {
   }
 
   login({username, password}: any) {
-    if(username === 'doanchu' && password == '123456') {
-      this.setToken('abcdefghiklmnopqrt');
-      return of({name: 'Doan Chu'});
-    }
-    return throwError(new Error('Failed to login'));
+    this.http.get<any>("http://localhost:3000/account").subscribe(res => {
+      const user = res.find((a: any) => {
+        return a.username === username && a.password === password;
+      });
+      if(user) {
+        this.setToken('abcdefghiklmnopqrt');
+        this.router.navigate(['admin']);
+        // return of({name: 'Doan Chu'});
+      } else {
+        alert('dang nhap that bai!');
+      }
+      // return throwError(new Error('Failed to login'));
+    })
+
   }
 
 }

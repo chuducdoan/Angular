@@ -1,0 +1,82 @@
+<div class="widget__area">
+  <div class="widget__item">
+    <div class="widget__icon">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" class="icon">account_circle</mat-icon>
+    </div>
+    <div class="widget__content">
+      <div class="widget__title">Account</div>
+      <div class="widget__total">20</div>
+    </div>
+  </div>
+  <div class="widget__item">
+    <div class="widget__icon">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" class="icon">local_atm</mat-icon>
+    </div>
+    <div class="widget__content">
+      <div class="widget__title">Spending Record</div>
+      <div class="widget__total">20</div>
+    </div>
+  </div>
+  <div class="widget__item">
+    <div class="widget__icon">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" class="icon">border_color</mat-icon>
+    </div>
+    <div class="widget__content">
+      <div class="widget__title">Post</div>
+      <div class="widget__total">20</div>
+    </div>
+  </div>
+  <div class="widget__item">
+    <div class="widget__icon">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" class="icon">money</mat-icon>
+    </div>
+    <div class="widget__content">
+      <div class="widget__title">Wallet</div>
+      <div class="widget__total">20</div>
+    </div>
+  </div>
+</div>
+
+<div class="chart__wrap">
+  <div id="divChart" class="chart__line">
+    <canvas id="myChart"></canvas>
+  </div>
+  <div class="chart__doughnut">
+    <canvas id="chartDoughnut"></canvas>
+  </div>
+</div>
+
+<div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> Weight </th>
+      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef> Symbol </th>
+      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

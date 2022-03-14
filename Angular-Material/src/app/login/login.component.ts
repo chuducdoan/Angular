@@ -29,14 +29,15 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     console.log(this.formLogin.value)
     if(this.formLogin.valid) {
-      this.authService.login(this.formLogin.value).subscribe({
-        next: (res) => {
-          this.router.navigate(['admin']);
-        },
-        error: (err) => {
-          alert(err.message);
-        }
-      })
+      // this.authService.login(this.formLogin.value).subscribe({
+      //   next: (res) => {
+      //     this.router.navigate(['admin']);
+      //   },
+      //   error: (err) => {
+      //     alert(err.message);
+      //   }
+      // })
+      this.authService.login(this.formLogin.value);
     }
   }
 

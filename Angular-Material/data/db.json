@@ -36,7 +36,7 @@
     },
     {
       "ngaytao": "2022-02-09T17:00:00.000Z",
-      "loaichitieu": "đi chợ",
+      "loaichitieu": "đi chợ ádsd",
       "sotien": 62000,
       "ghichu": "đi chợ mua đồ ăn cho cả nhà",
       "id": 3
@@ -74,13 +74,6 @@
       "ngaydang": "2022-02-09T17:00:00.000Z"
     },
     {
-      "id": 2,
-      "noidung": "Ngay hom nay me di du lich Da Nang",
-      "luotlike": 10,
-      "nguoilike": "DoanCD",
-      "ngaydang": "2022-02-09T17:00:00.000Z"
-    },
-    {
       "id": 3,
       "noidung": "Ngay hom nay bo di cong tac",
       "luotlike": 2,
@@ -88,17 +81,17 @@
       "ngaydang": "2022-02-09T17:00:00.000Z"
     },
     {
-      "noidung": "Ha noi mua",
+      "noidung": "Ha noi muaádasd",
       "luotlike": 10,
       "nguoilike": "Tuan",
       "ngaydang": "2022-02-24T17:00:00.000Z",
       "id": 6
     },
     {
-      "noidung": "hom nay t buon",
-      "luotlike": 10,
-      "nguoilike": "Hoang Hai Lam",
-      "ngaydang": "2022-02-25T17:00:00.000Z",
+      "noidung": "ádasd",
+      "luotlike": 2,
+      "nguoilike": "sdasd",
+      "ngaydang": "2022-03-10T17:00:00.000Z",
       "id": 7
     }
   ]

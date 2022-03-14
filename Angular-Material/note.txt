@@ -23,3 +23,7 @@ getAllAccount() {
 - b3: copy link vd: https://valued-network-236802-default-rtdb.firebaseio.com/
 - b4: Tạo file config.ts
 - b5: Sửa rule thành true trên Firebase
+
+7. Install thu vien chart.js
+- npm install chart.js
+- import Chart from 'chart.js/auto';

@@ -1,7 +1,7 @@
 <div id="wrapper">
-    <app-header></app-header>
+    <app-header (toggleSideBarForMe)="toggleSideBar($event)"></app-header>
     <mat-sidenav-container class="example-container">
-        <mat-sidenav mode="side" opened>
+        <mat-sidenav mode="side" [opened]="toggle" class="sidebar">
             <app-sidebar [arrSideBar]="arrSideBar" (buttonClicked)="onButtonClickFromSideBar($event)"></app-sidebar>
         </mat-sidenav>
         <mat-sidenav-content>
@@ -9,7 +9,7 @@
                 <app-breadcrumb [breadcrumn]="breadcrumn"></app-breadcrumb>
                 <router-outlet></router-outlet>
             </div>
+            <app-footer></app-footer>
         </mat-sidenav-content>
     </mat-sidenav-container>
-    <app-footer></app-footer>
 </div>

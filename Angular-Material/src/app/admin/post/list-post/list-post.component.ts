@@ -6,6 +6,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { PostService } from 'src/app/service/post/post.service';
 import { DialogDeleteComponent } from '../../popup/dialog-delete/dialog-delete.component';
 import { AddModalPostComponent } from '../add-modal-post/add-modal-post.component';
+import {getNotifytical} from '../../../util/util';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackBarComponent } from '../../snack-bar/snack-bar.component';
 
 @Component({
   selector: 'app-list-post',
@@ -20,7 +23,7 @@ export class ListPostComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private postService: PostService, public dialog: MatDialog) { }
+  constructor(private postService: PostService, public dialog: MatDialog, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getAllPost();
@@ -36,6 +39,7 @@ export class ListPostComponent implements OnInit {
     dialogRef.afterClosed().subscribe(res => {
       if(res === 'save') {
         this.getAllPost();
+        getNotifytical('save', this._snackBar, SnackBarComponent);
       }
     })
   }
@@ -51,6 +55,7 @@ export class ListPostComponent implements OnInit {
         this.postService.deletePost(id).subscribe({
           next: () => {
             this.getAllPost();
+            getNotifytical('delete', this._snackBar, SnackBarComponent);
           },
           error: () => {
             alert("Xoa that bai");
@@ -73,6 +78,7 @@ export class ListPostComponent implements OnInit {
       next: (res) => {
         if(res === 'update') {
           this.getAllPost();
+          getNotifytical('edit', this._snackBar, SnackBarComponent);
         }
       },
       error: () => {

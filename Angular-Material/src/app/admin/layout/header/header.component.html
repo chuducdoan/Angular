@@ -1,27 +1,26 @@
 <header>
     <div>
-        <mat-toolbar class="header">
-          <a href="#" class="header__logo">
-            <img src="https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/demo-4/img/logo.36f34a9f.svg" alt="">
-          </a>
-          <span class="header__title">My App</span>
-          <span class="example-spacer"></span>
-          <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-            <mat-icon matBadge="2" matBadgeColor="warn">comment</mat-icon>
+      <mat-toolbar color="primary">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="toggleSideBar()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <a [routerLink]="['home']">My App</a>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon icon" aria-label="Example icon-button with share icon">
+          <mat-icon>settings</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon icon" aria-label="Example icon-button with share icon">
+          <mat-icon>help</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon icon" aria-label="Example icon-button with share icon" [matMenuTriggerFor]="menu">
+          <mat-icon>person_outline</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Logout</span>
           </button>
-          <a class="user" [matMenuTriggerFor]="menu">
-            <div class="user__info">
-              <p class="user__name">Doan Chu</p>
-              <span>Dad</span>
-            </div>
-            <div href="" class="user__img">
-              <img src="assets/images/user.jpg" alt="">
-            </div>
-          </a>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>Info Detail</button>
-            <button mat-menu-item (click)="logout()">Logout</button>
-          </mat-menu>
-        </mat-toolbar>
+        </mat-menu>
+      </mat-toolbar>
     </div>
 </header>
