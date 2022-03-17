@@ -8,52 +8,49 @@
     <button mat-flat-button color="primary" (click)="openDialog()">Add</button>
 </form>
 <div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort >
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
 
-      <!--- Note that these columns can be defined in any order.
+        <!--- Note that these columns can be defined in any order.
             The actual rendered columns are set as a property on the row definition" -->
 
-      <!-- Position Column -->
-      <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-      </ng-container>
+        <!-- Position Column s -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="username">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Username </th>
-          <td mat-cell *matCellDef="let element"> {{element.username}} </td>
-      </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="username">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Username </th>
+            <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+        </ng-container>
 
-      <!-- Weight Column -->
-      <ng-container matColumnDef="password">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Password </th>
-          <td mat-cell *matCellDef="let element"> {{element.password}} </td>
-      </ng-container>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="password">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Password </th>
+            <td mat-cell *matCellDef="let element"> {{element.password}} </td>
+        </ng-container>
 
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="quyen">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Quyền </th>
-          <td mat-cell *matCellDef="let element"> {{element.quyen}} </td>
-      </ng-container>
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="quyen">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Quyền </th>
+            <td mat-cell *matCellDef="let element"> {{element.quyen}} </td>
+        </ng-container>
 
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="action">
-          <th mat-header-cell *matHeaderCellDef> Thao tác </th>
-          <td mat-cell *matCellDef="let element">
-              <div class="action">
-                  <a mat-raised-button color="accent" (click)="openModalEdit(element)">Edit</a>
-                  <a mat-raised-button color="warn" (click)="openModalDelete(element.id)">Delete</a>
-              </div>
-          </td>
-      </ng-container>
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Thao tác </th>
+            <td mat-cell *matCellDef="let element">
+                <div class="action">
+                    <a mat-raised-button color="accent" (click)="openModalEdit(element)">Edit</a>
+                    <a mat-raised-button color="warn" (click)="openModalDelete(element.id)">Delete</a>
+                </div>
+            </td>
+        </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-  <mat-paginator
-                  showFirstLastButtons
-              [pageSize]="10"
-                  aria-label="Select page of periodic elements">
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator showFirstLastButtons [pageSize]="10" aria-label="Select page of periodic elements">
     </mat-paginator>
 </div>
